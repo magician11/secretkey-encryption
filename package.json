@@ -8,13 +8,14 @@
   },
   "keywords": [
     "encryption",
-    "secretkey"
+    "secretkey",
+    "tweetnacl"
   ],
   "author": "Andrew Golightly <support@andrewgolightly.com> (http://www.golightlyplus.com)",
   "license": "ISC",
   "dependencies": {
-    "chloride": "^2.1.1",
-    "scrypt-async": "^1.2.0"
+    "scrypt-async": "^1.2.0",
+    "tweetnacl": "^0.14.3"
   },
   "devDependencies": {
     "eslint": "^2.5.3",
