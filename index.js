@@ -18,7 +18,7 @@ function encryptSecretKey(password, secretKey, callback) {
 function decryptEncryptedSecretKey(password, encryptedSecretKeyBundle, callback) {
   scrypt(password, encryptedSecretKeyBundle.salt, logN, blockSize, dkLen, interruptStep, (derivedKey) => {
     const secretKey = tweetnacl.secretbox.open(encryptedSecretKeyBundle.encryptedSecretKey, encryptedSecretKeyBundle.nonce, new Uint8Array(derivedKey));
-    return callback(secretKey);
+    callback(secretKey);
   });
 }
 
