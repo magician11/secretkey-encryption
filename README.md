@@ -10,12 +10,12 @@ All arrays of bytes are `Uint8Array`s.
 
 Arguments
 * password - string or array of bytes
-* secretKey - Uint8Array
+* secretKey - array of bytes
 
 When complete, the callback passed in is called with an object containing the following properties
-* salt - Uint8Array with 32 random bytes
-* encryptedSecretKey - Array of bytes
-* nonce - Uint8Array with 24 random bytes
+* salt - 32 random bytes
+* encryptedSecretKey - array of bytes
+* nonce - 24 random bytes
 
 ### decryptEncryptedSecretKey (password, encryptedSecretKeyBundle, callback)
 
