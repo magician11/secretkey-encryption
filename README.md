@@ -10,6 +10,6 @@ Arguments
 * password - string or array of bytes
 * secretKey - Uint8Array
 
-Call the callback with the following object with the following properties when complete
+When complete, the callback passed in is called with an object containing the following properties
 * salt - 32 random bytes
 * encryptedSecretKey - Array of bytes
