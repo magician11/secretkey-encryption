@@ -1,0 +1,24 @@
+{
+  "name": "secretkey-encryption",
+  "version": "0.1.1",
+  "description": "Encryption for secret keys.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "encryption",
+    "secretkey"
+  ],
+  "author": "Andrew Golightly <support@andrewgolightly.com> (http://www.golightlyplus.com)",
+  "license": "ISC",
+  "dependencies": {
+    "chloride": "^2.1.1",
+    "scrypt-async": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.5.3",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3"
+  }
+}
