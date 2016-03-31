@@ -23,6 +23,6 @@ Arguments
 * password - string or array of bytes
 * encryptedSecretKeyBundle - an object with parameters {salt, encryptedSecretKey, nonce}
 
-Returns
-* if the secret key was successfully decrypted, this function returns the secretKey (as an array of bytes)
-* otherwise if decryption failed, then `false` is returned
+When complete, the callback is called with
+* if the secret key was successfully decrypted, the secretKey (as an array of bytes)
+* otherwise if decryption failed, then it's called with `false`
