@@ -1,6 +1,6 @@
 const tweetnacl = require('tweetnacl');
 tweetnacl.util = require('tweetnacl-util');
-const secretkeyEncryption = require('../index');
+const secretkeyEncryption = require('../lib/index');
 
 const keyPair = tweetnacl.sign.keyPair();
 const encodedSecretKey = tweetnacl.util.encodeBase64(keyPair.secretKey);
@@ -8,7 +8,7 @@ console.log(`Original secret key\n${encodedSecretKey}\n`);
 
 const password = 'test password';
 
-secretkeyEncryption.encryptSecretKey(password, keyPair.secretKey, (encryptedSecretKeyBundle) => {
+secretkeyEncryption.encryptSecretKey(password, keyPair.secretKey, undefined, undefined, undefined, undefined, (encryptedSecretKeyBundle) => {
   console.log(`Encrypted Secret Key Bundle (as JSON string)\n${JSON.stringify(encryptedSecretKeyBundle)}\n`);
   secretkeyEncryption.decryptEncryptedSecretKey('test password', encryptedSecretKeyBundle, (secretKey) => {
     if (secretKey === false) {
