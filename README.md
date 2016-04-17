@@ -8,7 +8,7 @@ The secret key is encrypted by deriving a key from the supplied password using [
 
 All arrays of bytes are `Uint8Array`s.
 
-### encryptSecretKey (password, secretKey, [logN], [r], [dkLen], [interruptStep], callback)
+### encryptSecretKey (password, secretKey, [logN], [r], [dkLen], [interruptStep])
 
 Arguments
 * password - string or array of bytes
@@ -19,7 +19,7 @@ Arguments
 * interruptStep (optional) - steps to split calculation with timeouts. Defaults to 0.
 * callback
 
-When complete, the callback passed in is called with an object containing the following properties
+Returns a promise, which when successful, resolves with an object containing the following properties
 * encryptedSecretKey - array of bytes
 * salt - 32 random bytes
 * nonce - 24 random bytes
@@ -28,12 +28,12 @@ When complete, the callback passed in is called with an object containing the fo
 * dkLen
 * interruptStep
 
-### decryptEncryptedSecretKey (password, encryptedSecretKeyBundle, callback)
+### decryptEncryptedSecretKey (password, encryptedSecretKeyBundle)
 
 Arguments
 * password - string or array of bytes
 * encryptedSecretKeyBundle - an object with parameters {encryptedSecretKey, salt, nonce, logN, blockSize, dkLen, interruptStep}
 
-When complete, the callback is called with
-* if the secret key was successfully decrypted, the secretKey (as an array of bytes)
-* otherwise if decryption failed, then it's called with `false`
+Returns a promise
+* that on successful decryption of the encrypted key, resolves with the secretKey (as an array of bytes)
+* otherwise is rejected with a message (string)
