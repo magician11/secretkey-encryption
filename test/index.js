@@ -8,7 +8,8 @@ console.log(`Original secret key\n${encodedSecretKey}\n`);
 
 const password = 'test password';
 
-secretkeyEncryption.encryptSecretKey(password, keyPair.secretKey, undefined, undefined, undefined, undefined, (encryptedSecretKeyBundle) => {
+secretkeyEncryption.encryptSecretKey(password, keyPair.secretKey)
+.then((encryptedSecretKeyBundle) => {
   console.log(`Encrypted Secret Key Bundle (as JSON string)\n${JSON.stringify(encryptedSecretKeyBundle)}\n`);
   secretkeyEncryption.decryptEncryptedSecretKey('test password', encryptedSecretKeyBundle, (secretKey) => {
     if (secretKey === false) {
