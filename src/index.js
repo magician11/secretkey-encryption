@@ -16,7 +16,7 @@ function encryptSecretKey(password, secretKey, logN = 16, blockSize = 8) {
 
 function decryptEncryptedSecretKey(password, encryptedSecretKeyBundle) {
   return new Promise((resolve, reject) => {
-    scrypt(password, encryptedSecretKeyBundle.salt, encryptedSecretKeyBundle.logN, encryptedSecretKeyBundle.blockSize, (derivedKey) => {
+    scrypt(password, encryptedSecretKeyBundle.salt, encryptedSecretKeyBundle.logN, encryptedSecretKeyBundle.blockSize, dkLen, (derivedKey) => {
       const secretKey = tweetnacl.secretbox.open(encryptedSecretKeyBundle.encryptedSecretKey, encryptedSecretKeyBundle.nonce, new Uint8Array(derivedKey));
       if (secretKey) {
         resolve(secretKey);
