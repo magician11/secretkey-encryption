@@ -1,6 +1,6 @@
 {
   "name": "secretkey-encryption",
-  "version": "0.2.2",
+  "version": "0.3.3",
   "description": "Encryption for secret keys.",
   "main": "./lib/index.js",
   "scripts": {

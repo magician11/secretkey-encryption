@@ -15,8 +15,6 @@ Arguments
 * secretKey - array of bytes
 * logN (optional) - CPU/memory cost parameter (1 to 31). Defaults to 16.
 * r (optional) - block size parameter. Defaults to 8.
-* dkLen (optional) - length of derived key. Defaults to 32.
-* interruptStep (optional) - steps to split calculation with timeouts. Defaults to 0.
 * callback
 
 Returns a promise, which when successful, resolves with an object containing the following properties
@@ -25,14 +23,12 @@ Returns a promise, which when successful, resolves with an object containing the
 * nonce - 24 random bytes
 * logN
 * blockSize
-* dkLen
-* interruptStep
 
 ### decryptEncryptedSecretKey (password, encryptedSecretKeyBundle)
 
 Arguments
 * password - string or array of bytes
-* encryptedSecretKeyBundle - an object with parameters {encryptedSecretKey, salt, nonce, logN, blockSize, dkLen, interruptStep}
+* encryptedSecretKeyBundle - an object with parameters { encryptedSecretKey, salt, nonce, logN, blockSize }
 
 Returns a promise
 * that on successful decryption of the encrypted key, resolves with the secretKey (as an array of bytes)
